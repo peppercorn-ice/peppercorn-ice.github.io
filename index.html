@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>汪沄的个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero card reveal">
+        <div class="hero-layout">
+          <div class="avatar-wrap" id="avatar-wrap">
+            <img id="avatar" src="avatar.jpg" alt="汪沄头像" class="avatar" />
+          </div>
+          <div class="hero-copy">
+            <div class="hero-top">
+              <p class="tag" id="tag">Personal Homepage</p>
+              <button id="lang-toggle" class="lang-btn" type="button">EN</button>
+            </div>
+            <h1 id="hero-title">你好，我是汪沄</h1>
+            <p class="subtitle" id="hero-subtitle">英语语言学专业学生。</p>
+            <div class="chip-row">
+              <span class="chip" id="chip-major">专业：英语语言学</span>
+              <span class="chip" id="chip-hobby">爱好：游泳</span>
+              <span class="chip">MacBook Air M5</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card reveal">
+          <h2 id="about-title">关于我</h2>
+          <p id="about-text">我是汪沄，主修英语语言学，平时喜欢游泳，也喜欢尝试把创意做成网页。</p>
+        </article>
+
+        <article class="card reveal">
+          <h2 id="contact-title">联系方式</h2>
+          <p>
+            <a href="mailto:lucasywh@sjtu.edu.cn" id="contact-link">lucasywh@sjtu.edu.cn</a>
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <h2 id="goal-title">今天的目标</h2>
+          <ul>
+            <li id="goal-1">完成一个结构清晰的个人主页</li>
+            <li id="goal-2">掌握静态资源组织方式</li>
+            <li id="goal-3">发布到 GitHub Pages</li>
+          </ul>
+        </article>
+
+        <article class="card wide reveal">
+          <h2 id="time-title">实时时间</h2>
+          <p id="time" class="time">--:--:--</p>
+          <p class="hint" id="time-hint">页面正在通过 JavaScript 实时更新时间。</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
