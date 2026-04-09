@@ -1,0 +1,36 @@
+name: Generate Posts Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'posts/**'
+      - '.github/workflows/generate-posts.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-posts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate posts.json
+        run: node scripts/generate-posts.js
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- posts.json; then
+            echo "No changes to posts.json"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts.json
+          git commit -m "chore: auto-generate posts.json"
+          git push

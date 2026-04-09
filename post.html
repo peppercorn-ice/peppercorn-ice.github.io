@@ -1,9 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #182134;
+      --subtext: #44506a;
+      --heading: #0f172a;
+      --border: #dbe3f3;
+      --code-bg: #0f172a;
+      --code-text: #e6edf7;
+      --inline-code-bg: #edf2ff;
+      --inline-code-text: #1e3a8a;
+      --link: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 15%, #dce8ff 0 16%, transparent 40%),
+        linear-gradient(160deg, #f8fbff 0%, #eef3ff 100%);
+      line-height: 1.85;
+    }
+
+    #content {
+      width: min(760px, calc(100vw - 32px));
+      margin: 40px auto;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 14px 36px rgba(22, 40, 92, 0.08);
+      overflow-wrap: anywhere;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3 {
+      color: var(--heading);
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
+    #content h1 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 4.8vw, 42px);
+    }
+
+    #content h2 {
+      margin: 34px 0 16px;
+      font-size: clamp(24px, 3.4vw, 30px);
+    }
+
+    #content h3 {
+      margin: 26px 0 12px;
+      font-size: clamp(20px, 2.8vw, 24px);
+    }
+
+    #content p {
+      margin: 0 0 16px;
+      color: var(--subtext);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    #content ul,
+    #content ol {
+      margin: 0 0 18px;
+      padding-left: 24px;
+      color: var(--subtext);
+    }
+
+    #content li {
+      margin: 8px 0;
+      padding-left: 4px;
+    }
+
+    #content a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(29, 78, 216, 0.25);
+    }
+
+    #content a:hover {
+      border-bottom-color: rgba(29, 78, 216, 0.7);
+    }
+
+    #content code {
+      font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+      font-size: 0.9em;
+      background: var(--inline-code-bg);
+      color: var(--inline-code-text);
+      border-radius: 8px;
+      padding: 2px 7px;
+    }
+
+    #content pre {
+      margin: 18px 0 22px;
+      padding: 16px 18px;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 12px;
+      border: 1px solid #24324f;
+      overflow-x: auto;
+      line-height: 1.65;
+    }
+
+    #content pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.93em;
+    }
+
+    #content blockquote {
+      margin: 18px 0;
+      padding: 10px 16px;
+      border-left: 4px solid #9db7ef;
+      background: #f5f8ff;
+      color: #344258;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 760px) {
+      #content {
+        margin: 18px auto;
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      #content p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="content">Loading...</div>
