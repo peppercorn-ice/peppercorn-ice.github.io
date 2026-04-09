@@ -1,15 +1,3 @@
-function updateTime() {
-  const node = document.getElementById("time");
-  if (!node) return;
-
-  const now = new Date();
-  const formatted = now.toLocaleTimeString("zh-CN", {
-    hour12: false,
-  });
-
-  node.textContent = formatted;
-}
-
 function escapeHtml(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -75,6 +63,4 @@ if (avatarWrap && window.matchMedia("(min-width: 761px)").matches) {
   });
 }
 
-updateTime();
-setInterval(updateTime, 1000);
 loadPosts();
